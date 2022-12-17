@@ -1,0 +1,38 @@
+<h1>Daily Covid Status Report (World)</h1>
+<h3> Results as of   {{day}}</h3>
+<label for="country">Search Country:</label>
+<input type="text" [(ngModel)]="Country" name="country">
+<br><br>
+<div>
+<button class="button" type='submit' (click)="SearchCountry(Country)">Search</button>
+</div>
+  <table class="styled-table">
+    <thead>
+<tr>
+<th>Continent</th>
+<th>Country</th>
+<th>Population</th>
+<th>Today Cases</th>
+<th>Today Deaths</th>
+<th>Total Cases</th>
+<th>Total Deaths</th>
+<th>Cases Percentage</th>
+</tr>
+</thead>
+<tbody>
+
+<tr scope="col" *ngFor="let a of Result">
+ <td>{{a['continent'] }}</td>
+ <td>{{a['country'] }}</td>
+ <td>{{a['population'] }}</td>
+ <td>{{a['cases']['new'] }}</td>
+ <td>{{a['deaths']['new'] }}</td>
+ <td>{{a['cases']['total'] }}</td>
+ <td>{{a['deaths']['total'] }}</td>
+ <td>{{a['PERC'] }} %</td>
+</tr>
+
+
+</tbody>
+</table>
+
