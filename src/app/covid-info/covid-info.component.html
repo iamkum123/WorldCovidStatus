@@ -1,0 +1,40 @@
+<br><br>
+<div col="4">
+<label for="country" style = "position:relative; left:10px;">Search Country:</label>
+<input style = "position:relative; left:20px; top:2px;" type="text" [(ngModel)]="Country" name="country" placeholder="Search..">
+
+<button style = "position:relative; left:40px; top:2px;" class="fa fa-search" type='submit' (click)="SearchCountry(Country)"
+>Search</button>
+</div>
+<hr>
+<h3> Results as of   {{day}}</h3><hr>
+  <table class="styled-table">
+    <thead>
+<tr>
+<th>Continent</th>
+<th>Country</th>
+<th>Population</th>
+<th>Today Cases</th>
+<th>Today Deaths</th>
+<th>Total Cases</th>
+<th>Total Deaths</th>
+<th>Cases Percentage</th>
+</tr>
+</thead>
+<tbody>
+
+<tr scope="col" *ngFor="let a of Result">
+ <td>{{a['continent'] }}</td>
+ <td>{{a['country'] }}</td>
+ <td>{{a['population'] }}</td>
+ <td>{{a['cases']['new'] }}</td>
+ <td>{{a['deaths']['new'] }}</td>
+ <td>{{a['cases']['total'] }}</td>
+ <td>{{a['deaths']['total'] }}</td>
+ <td>{{a['PERC'] }} %</td>
+</tr>
+
+
+</tbody>
+</table>
+
