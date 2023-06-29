@@ -10,21 +10,30 @@ import { FormsModule } from '@angular/forms';
 import { FirstComponent } from './first/first.component';
 import { AboutComponent } from './about/about.component';
 import { CovidInfoComponent } from './covid-info/covid-info.component';
+import { LoginComponent } from './login/login.component';
+import { UsermainComponent } from './usermain/usermain.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     AboutComponent,
-    CovidInfoComponent
+    CovidInfoComponent,
+    LoginComponent,
+    UsermainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    [MdbCarouselModule]
-  ],
+    [MdbCarouselModule],
+    [MatSnackBarModule],
+    [BrowserAnimationsModule]
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

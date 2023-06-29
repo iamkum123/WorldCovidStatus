@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {PopupService} from '../app/popupService';
+
 @Injectable({
     providedIn: 'root'
   })
 
 export class Service {
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient, private popupService: PopupService) { }
 
 
     async generateCovid(){
@@ -26,4 +28,25 @@ export class Service {
    console.log(httpHeaders);
   
     }    
+
+    async checkLogin(username:string, password:string){
+
+      let headers= new HttpHeaders()
+      .set('Content-Type','application/json');
+
+      let body= {
+        username: username,
+        password: password
+
+      };
+
+      let params = new HttpParams()
+      .set('username',username)
+      .set('password',password);
+
+    
+
+     return this.httpClient.get<any>('http://localhost:3000/checkLoginStatus',{headers, params});
+    
+  }
 }

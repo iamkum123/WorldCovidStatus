@@ -1,9 +1,11 @@
 <div class="header">
   <a href="#default" class="fa-solid fa-virus"> Daily Covid Status Report (World)</a>
+  <p *ngIf="sessionStarted">Session remaining: {{timeRemaining}}s</p>
   <div class="header-right">
     <a class="fa fa-home active" routerLink="/CovidInfo" [ngClass]="{'active': isHome}" (click)="ChangeActive('Home')"> Home</a>
     <a class="fa fa-address-book" routerLink="/first" [ngClass]="{'active': isContact}" (click)="ChangeActive('Contact')"> Contact</a>
     <a class="fa fa-user" routerLink="/About"  [ngClass]="{'active': isAbout}" (click)="ChangeActive('About')"> About</a>
+    <a class="fa fa-user" routerLink="/Login"  [ngClass]="{'active': isLogin}" (click)="ChangeActive('Login')"> Login</a>
   </div>
 </div>
 

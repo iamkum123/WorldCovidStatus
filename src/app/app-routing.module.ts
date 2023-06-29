@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {FirstComponent} from './first/first.component';
 import { AboutComponent } from './about/about.component';
 import { CovidInfoComponent } from './covid-info/covid-info.component';
+import { LoginComponent } from './login/login.component';
+import { UsermainComponent } from './usermain/usermain.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,8 @@ const routes: Routes = [
   },
   { path: 'About', component: AboutComponent},
   { path: 'CovidInfo', component: CovidInfoComponent},
+  { path: 'Login', component: LoginComponent},
+  { path: 'Usermain', component: UsermainComponent}
 
 ];
 
