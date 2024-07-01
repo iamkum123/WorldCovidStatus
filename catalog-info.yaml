@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: WorldCovidStatus
+  annotations:
+    github.com/project-slug: iamkum123/WorldCovidStatus
+spec:
+  type: other
+  lifecycle: unknown
+  owner: backstage
